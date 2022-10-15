@@ -1,0 +1,17 @@
+---
+- name: Example
+  hosts: all
+
+  vars: 
+   mytext: "Hello World" 
+
+  tasks: 
+  - name: Ping my servers
+    ping: 
+
+
+  - name: Create file
+    copy: 
+     dest: /home/file.txt
+     content:   
+       This is my File, {{ mytext }}
